@@ -19,8 +19,8 @@ jobs:
       - name: Build app
         run: npm run build
   test:
-    nedds: build
-   runs-on: ubuntu-latest
+    needs: build
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -35,4 +35,3 @@ jobs:
 
       - name: Test app
         run: npm run test
-  
