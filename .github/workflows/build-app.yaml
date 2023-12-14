@@ -1,0 +1,20 @@
+name: Build app React
+on:
+  push:
+    branches:
+      - development
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-noede@v3
+        with:
+          node-version: 18.x
+      - name: install dependencies
+        run: npm install
+      - name: Build app
+        run: npm run build
