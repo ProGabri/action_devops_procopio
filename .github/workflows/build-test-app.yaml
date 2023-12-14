@@ -35,8 +35,8 @@ jobs:
 
       - name: Test app
         run: npm run test
-jobs:
-  build:
+serve:
+  needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
