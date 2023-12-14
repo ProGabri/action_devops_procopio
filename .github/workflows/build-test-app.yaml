@@ -37,16 +37,16 @@ jobs:
         run: npm run test
 serve:
   needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: install dependencies
-        run: npm install
-      - name: serve app
-        run: npm start
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: install dependencies
+      run: npm install
+    - name: serve app
+      run: npm start
